@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HouseManager</string>
+    <string name="paper">排查日报</string>
+    <string name="form">统计表单</string>
+    <string name="map">排查地图</string>
+    <string name="person">个人中心</string>
 </resources>
