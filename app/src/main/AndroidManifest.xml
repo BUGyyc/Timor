@@ -14,12 +14,15 @@
         <activity android:name=".activity.SplashActivity">
 
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.Login_Activity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter >
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+
 
     </application>
 

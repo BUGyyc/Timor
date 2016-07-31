@@ -4,4 +4,15 @@
     <string name="form">统计表单</string>
     <string name="map">排查地图</string>
     <string name="person">个人中心</string>
+
+    <!--login-->
+    <string name="login_title">深圳市房屋排查系统</string>
+    <string name="job_login">工号登陆</string>
+    <string name="iphone_login">手机登陆</string>
+    <string name="input_id">请输入工号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="login">提交登陆</string>
+    <string name="input_iphone_number">请输入手机号码</string>
+    <string name="get_auth_code">获取验证码</string>
+    <string name="input_dynamic_code">请输入动态验证码</string>
 </resources>

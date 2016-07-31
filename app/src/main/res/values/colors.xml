@@ -6,4 +6,8 @@
     <color name="bt_green">#21C064</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <!--login-->
+    <color name="login_bt_bg">#5D70F1</color>
+    <color name="edit_bg">#335D70F1</color>
 </resources>
