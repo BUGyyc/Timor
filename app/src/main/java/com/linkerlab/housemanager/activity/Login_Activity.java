@@ -1,6 +1,7 @@
 package com.linkerlab.housemanager.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +16,7 @@ import net.tsz.afinal.annotation.view.ViewInject;
  * wzc
  */
 public class Login_Activity extends BaseActivity implements View.OnClickListener{
-
-            @ViewInject(id = R.id.job_login)Button mbt_job;
+    @ViewInject(id = R.id.job_login)Button mbt_job;
 
 
     @Override
@@ -33,6 +33,8 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void loadData() {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
 
     }
 
