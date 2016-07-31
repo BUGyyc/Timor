@@ -10,4 +10,6 @@
     <!--login-->
     <color name="login_bt_bg">#5D70F1</color>
     <color name="edit_bg">#335D70F1</color>
+    <color name="transparency">#00000000</color>
+    <color name="schema_text">#FFFFFF</color>
 </resources>
