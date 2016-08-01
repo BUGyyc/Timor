@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="#5d70f1"
+    android:background="@color/title"
     android:gravity="center_vertical">
 
     <ImageView
@@ -11,6 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
+        android:visibility="gone"
         android:src="@mipmap/back" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:id="@+id/delete"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:visibility="gone"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
