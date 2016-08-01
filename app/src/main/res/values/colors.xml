@@ -19,4 +19,12 @@
     <drawable name="succeed">#5986F2</drawable>
     <color name="succeed_ok">#3B5999</color>
     <color name="succeed_line">#1A7841</color>
+    <color name="schema_text">#FFFFFF</color>
+
+    <!--buttom-->
+    <color name="line">#9B9B9B</color>
+    <color name="font">#5986F2</color>
+
+    <!--title tab-->
+    <color name="title">#3B5999</color>
 </resources>

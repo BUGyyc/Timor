@@ -21,4 +21,7 @@
     <string name="ok">好的</string>
     <string name="succeed">恭喜操作成功！</string>
     <string name="succeed_text">您的信息已经成功提交，您可以在列表页重新查看</string>
+    <string name="titie_map">统计地图</string>
+    <string name="title_form">楼房列表</string>
+    <string name="title_paper">我的日报</string>
 </resources>

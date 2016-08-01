@@ -1,12 +1,15 @@
 package com.linkerlab.housemanager.activity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.linkerlab.housemanager.R;
 import com.linkerlab.housemanager.base.BaseActivity;
@@ -48,6 +51,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     private PaperFragment mPaperFragment;
     /*个人中心界面*/
     private PersonCenterFragment mPersonCenterFragment;
+    /*pager*/
+    @ViewInject(id=R.id.iv_rb)
+    ImageView mImage_Paper;
+    @ViewInject(id=R.id.tv_rb)
+    TextView mText_paper;
+    /*form*/
+    @ViewInject(id=R.id.iv_form)
+    ImageView mImage_Form;
+    @ViewInject(id=R.id.tv_form)
+    TextView mText_Form;
+    /*map*/
+    @ViewInject(id=R.id.iv_map)
+    ImageView mImage_Map;
+    @ViewInject(id=R.id.tv_map)
+    TextView mText_Map;
+    /*person*/
+    @ViewInject(id=R.id.iv_person)
+    ImageView mImage_Person;
+    @ViewInject(id=R.id.tv_person)
+    TextView mText_Person;
+
+
 
     @Override
     protected void initVariables() {
@@ -221,32 +246,66 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bt_paper:
-                btn_paper.setBackgroundResource(R.color.bt_green);
+                /*btn_paper.setBackgroundResource(R.color.bt_green);
                 btn_person.setBackgroundResource(R.color.black);
                 btn_form.setBackgroundResource(R.color.black);
-                btn_map.setBackgroundResource(R.color.black);
+                btn_map.setBackgroundResource(R.color.black);*/
+                mImage_Paper.setImageResource(R.drawable.icon_rb_active);
+                mText_paper.setTextColor(getResources().getColor(R.color.font));
+                mImage_Form.setImageResource(R.drawable.icon_bd);
+                mText_Form.setTextColor(getResources().getColor(R.color.line));
+                mImage_Map.setImageResource(R.drawable.icon_dt);
+                mText_Map.setTextColor(getResources().getColor(R.color.line));
+                mImage_Person.setImageResource(R.drawable.icon_zx);
+                mText_Person.setTextColor(getResources().getColor(R.color.line));
+
                 handlerPager(PAPER_TYPE);
                 break;
             case R.id.bt_form:
-                btn_person.setBackgroundResource(R.color.black);
+                /*btn_person.setBackgroundResource(R.color.black);
                 btn_form.setBackgroundResource(R.color.bt_green);
                 btn_map.setBackgroundResource(R.color.black);
-                btn_paper.setBackgroundResource(R.color.black);
+                btn_paper.setBackgroundResource(R.color.black);*/
+                mImage_Paper.setImageResource(R.drawable.icon_rb);
+                mText_paper.setTextColor(getResources().getColor(R.color.line));
+                mImage_Form.setImageResource(R.drawable.icon_bd_active);
+                mText_Form.setTextColor(getResources().getColor(R.color.font));
+                mImage_Map.setImageResource(R.drawable.icon_dt);
+                mText_Map.setTextColor(getResources().getColor(R.color.line));
+                mImage_Person.setImageResource(R.drawable.icon_zx);
+                mText_Person.setTextColor(getResources().getColor(R.color.line));
                 handlerPager(FORM_TYPE);
                 break;
             case R.id.bt_map:
-                btn_person.setBackgroundResource(R.color.black);
+                /*btn_person.setBackgroundResource(R.color.black);
                 btn_form.setBackgroundResource(R.color.black);
                 btn_map.setBackgroundResource(R.color.bt_green);
-                btn_paper.setBackgroundResource(R.color.black);
+                btn_paper.setBackgroundResource(R.color.black);*/
+                mImage_Paper.setImageResource(R.drawable.icon_rb);
+                mText_paper.setTextColor(getResources().getColor(R.color.line));
+                mImage_Form.setImageResource(R.drawable.icon_bd);
+                mText_Form.setTextColor(getResources().getColor(R.color.line));
+                mImage_Map.setImageResource(R.drawable.icon_dt_active);
+                mText_Map.setTextColor(getResources().getColor(R.color.font));
+                mImage_Person.setImageResource(R.drawable.icon_zx);
+                mText_Person.setTextColor(getResources().getColor(R.color.line));
                 handlerPager(MAP_TYPE);
                 break;
             case R.id.bt_person:
-                btn_person.setBackgroundResource(R.color.bt_green);
+                /*btn_person.setBackgroundResource(R.color.bt_green);
                 btn_form.setBackgroundResource(R.color.black);
                 btn_map.setBackgroundResource(R.color.black);
-                btn_paper.setBackgroundResource(R.color.black);
+                btn_paper.setBackgroundResource(R.color.black);*/
+                mImage_Paper.setImageResource(R.drawable.icon_rb);
+                mText_paper.setTextColor(getResources().getColor(R.color.line));
+                mImage_Form.setImageResource(R.drawable.icon_bd);
+                mText_Form.setTextColor(getResources().getColor(R.color.line));
+                mImage_Map.setImageResource(R.drawable.icon_dt);
+                mText_Map.setTextColor(getResources().getColor(R.color.line));
+                mImage_Person.setImageResource(R.drawable.icon_zx_active);
+                mText_Person.setTextColor(getResources().getColor(R.color.font));
                 handlerPager(PERSON_CENTER_TYPE);
+
                 break;
             default:
                 break;

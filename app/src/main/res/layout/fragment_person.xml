@@ -2,10 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/person"
+    <include layout="@layout/top_title"></include>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/head_cover">
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/person_gv"
+        android:numColumns="2"
+        android:paddingTop="40dp"
+        android:paddingLeft="20dp"
+        android:horizontalSpacing="20dp"
+        android:verticalSpacing="20dp"
+        android:paddingRight="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="person"/>
+        android:layout_height="match_parent">
+    </GridView>
 
 </LinearLayout>

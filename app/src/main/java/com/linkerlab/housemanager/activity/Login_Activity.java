@@ -20,6 +20,7 @@ import net.tsz.afinal.annotation.view.ViewInject;
  * Created by Administrator on 2016/7/30.
  * wzc
  */
+
 public class Login_Activity extends BaseActivity implements View.OnClickListener {
 
     @ViewInject(id = R.id.job_login)
