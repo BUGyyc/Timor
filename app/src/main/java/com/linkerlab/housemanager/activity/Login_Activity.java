@@ -7,10 +7,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.linkerlab.housemanager.R;
 import com.linkerlab.housemanager.base.BaseActivity;
 import com.linkerlab.housemanager.util.Tool;
+import com.linkerlab.housemanager.util.Uploading_Dialog;
 
 import net.tsz.afinal.annotation.view.ViewInject;
 
@@ -62,20 +64,19 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.job_login:
-
-                mbt_job.setTextColor(getResources().getColor(R.color.schema_text));
-                mbt_job.setBackgroundResource(R.drawable.semi_round_button);
-                mbt_iphone.setTextColor(getResources().getColor(R.color.login_bt_bg));
+                mbt_job.setTextColor(getResources().getColor(R.color.white));
+                mbt_job.setBackgroundResource(R.drawable.semi_round_button2);
+                mbt_iphone.setTextColor(getResources().getColor(R.color.login_text));
                 mbt_iphone.setBackgroundResource(R.color.transparency);
                 mbt_gat.setVisibility(View.GONE);
                 met_user_id.setHint(R.string.input_id);
                 met_password.setHint(R.string.input_password);
                 break;
             case R.id.iphone_login:
-                mbt_job.setTextColor(getResources().getColor(R.color.login_bt_bg));
+                mbt_job.setTextColor(getResources().getColor(R.color.login_text));
                 mbt_job.setBackgroundResource(R.color.transparency);
-                mbt_iphone.setTextColor(getResources().getColor(R.color.schema_text));
-                mbt_iphone.setBackgroundResource(R.drawable.semi_round_button);
+                mbt_iphone.setTextColor(getResources().getColor(R.color.white));
+                mbt_iphone.setBackgroundResource(R.drawable.semi_round_button2);
                 mbt_gat.setVisibility(View.VISIBLE);
                 met_user_id.setHint(R.string.input_iphone_number);
                 met_password.setHint(R.string.input_dynamic_code);

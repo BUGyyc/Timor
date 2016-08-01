@@ -9,9 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="165dp"
+        android:gravity="center"
         android:orientation="vertical">
+
         <ImageView
             android:layout_width="152dp"
             android:layout_height="36.5dp"
@@ -27,37 +28,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/semi_round_backgroud">
 
             <Button
                 android:id="@+id/job_login"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/semi_round_button"
-                android:text="@string/job_login"
+                android:background="@drawable/semi_round_button2"
                 android:gravity="center"
+                android:text="@string/job_login"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <Button
                 android:id="@+id/iphone_login"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@color/transparency"
+                android:gravity="center"
                 android:text="@string/iphone_login"
-                android:textColor="@color/login_bt_bg" />
+                android:textColor="@color/login_text" />
         </LinearLayout>
     </LinearLayout>
 
@@ -70,8 +71,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginRight="110dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -81,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/semi_round_edittext"
                 android:gravity="center"
-                android:singleLine="true"
-                android:hint="@string/input_id" />
+                android:hint="@string/input_id"
+                android:singleLine="true" />
 
             <Button
                 android:id="@+id/get_auth_code"
@@ -101,29 +102,22 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/semi_round_edittext"
                 android:gravity="center"
-                android:singleLine="true"
                 android:hint="@string/input_password"
-                android:inputType="textPassword" />
-
+                android:inputType="textPassword"
+                android:singleLine="true" />
         </LinearLayout>
 
-        <LinearLayout
+        <Button
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginRight="125dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/semi_round_backgroud"
-            android:gravity="center">
+            android:background="@drawable/semi_round_button"
+            android:text="@string/login"
+            android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/semi_round_button"
-                android:textColor="@color/white"
-                android:text="@string/login" />
-        </LinearLayout>
     </LinearLayout>
 
 

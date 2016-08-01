@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/colorAccent"
+    android:color="@color/white"
     android:shape="rectangle">
     <!--
  	android:shape=["rectangle" | "oval" | "line" | "ring"]
  	shape的形状，默认为矩形，可以设置为矩形（rectangle）、椭圆形(oval)、线性形状(line)、环形(ring)-->
     <!--corners：圆角   radius设置四个角的半径-->
-    <corners android:radius="50dp" />
+    <corners android:radius="5dp" />
     <!--stroke：描边-->
     <!--<stroke
         android:width="1dp"
@@ -19,5 +19,5 @@
         android:right="5dp"
         android:top="5dp" />
     <!-- solid填充 -->
-    <solid android:color="@color/edit_bg" />
+    <solid android:color="@color/white" />
 </shape>

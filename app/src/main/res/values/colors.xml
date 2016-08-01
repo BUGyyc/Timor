@@ -4,12 +4,19 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bt_green">#21C064</color>
-    <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
     <!--login-->
-    <color name="login_bt_bg">#5D70F1</color>
+    <color name="login_bt_bg">#5986F2</color>
+    <color name="login_text">#4A4A4A</color>
     <color name="edit_bg">#335D70F1</color>
     <color name="transparency">#00000000</color>
-    <color name="schema_text">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <!--loading-->
+    <drawable name="defeated">#E04831</drawable>
+    <color name="defeated_ok">#C94138</color>
+    <color name="defeated_line">#8C302A</color>
+    <drawable name="succeed">#5986F2</drawable>
+    <color name="succeed_ok">#3B5999</color>
+    <color name="succeed_line">#1A7841</color>
 </resources>
