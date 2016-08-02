@@ -5,16 +5,6 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
-    <!-- 百度地图权限 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-   <!-- <uses-permission android:name="android.permission.GET_TASKS" />-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -22,10 +12,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!-- 百度地图 -->
-        <meta-data
-            android:name="com.baidu.lbsapi.API_KEY"
-            android:value="QLRwGSAxdM5a2csn4VGmodHhAd5YGle1" />
         <activity android:name=".activity.SplashActivity">
         </activity>
         <activity
@@ -33,20 +19,17 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+         <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
-        </activity>
-        <!--地图详情内容-->
-        <activity
-            android:name=".activity.MapDetialActivity"
-            android:launchMode="singleTask"/>
-        <activity
-            android:name=".activity.MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme" />
+            </activity>
     </application>
 
 </manifest>
