@@ -12,6 +12,7 @@
         android:id="@+id/person_gv"
         android:numColumns="2"
         android:paddingTop="40dp"
+        android:visibility="gone"
         android:paddingLeft="20dp"
         android:horizontalSpacing="20dp"
         android:verticalSpacing="20dp"
