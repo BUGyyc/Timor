@@ -13,10 +13,10 @@
         android:color="@color/login_bt_bg" />
     <!-- solid填充 -->
     <!-- padding内边距，即内容与边的距离 -->
-   <padding
+  <!-- <padding
         android:bottom="15dp"
         android:left="15dp"
         android:right="15dp"
-        android:top="15dp" />
+        android:top="15dp" />-->
     <solid android:color="@color/login_bt_bg" />
 </shape>

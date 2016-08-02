@@ -15,6 +15,12 @@
     <string name="input_iphone_number">请输入手机号码</string>
     <string name="get_auth_code">获取验证码</string>
     <string name="input_dynamic_code">请输入动态验证码</string>
+    <!--loading-->
+    <string name="defeated">抱歉出错了！</string>
+    <string name="defeated_text">表单没有批量上传成功，请检查网络连接并重新长传</string>
+    <string name="ok">好的</string>
+    <string name="succeed">恭喜操作成功！</string>
+    <string name="succeed_text">您的信息已经成功提交，您可以在列表页重新查看</string>
     <string name="titie_map">统计地图</string>
     <string name="title_form">楼房列表</string>
     <string name="title_paper">我的日报</string>
