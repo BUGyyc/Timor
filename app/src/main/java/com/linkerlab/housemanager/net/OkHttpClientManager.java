@@ -355,10 +355,11 @@ import java.util.Set;
             return getInstance()._postAsString(url, params);
         }
 
-        public static void postAsyn(String url, final ResultCallback callback, Param... params)
-        {
+
+        public static void postAsyn(String url, final ResultCallback callback, Param... params) {
             getInstance()._postAsyn(url, callback, params);
         }
+
 
 
         public static void postAsyn(String url, final ResultCallback callback, Map<String, String> params)

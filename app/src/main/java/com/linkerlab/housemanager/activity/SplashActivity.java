@@ -14,6 +14,8 @@ import com.linkerlab.housemanager.R;
 import com.linkerlab.housemanager.base.BaseActivity;
 import com.linkerlab.housemanager.ui.FirstFragment;
 
+import net.tsz.afinal.FinalDb;
+
 /**
  * Created by x-man on 16/7/30.
  * 引导界面
@@ -23,6 +25,7 @@ public class SplashActivity extends BaseActivity {
     private FragmentManager mFragmentManager;
     @Override
     protected void initVariables() {
+        FinalDb db = FinalDb.create(this);
 
     }
 

@@ -5,18 +5,105 @@
     <include layout="@layout/top_title"></include>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/head_cover">
+        android:layout_height="150dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:background="#E8E9E8">
+        <LinearLayout
+            android:id="@+id/layout_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/avatar"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="5dp"
+                android:text="彭俊熙"/>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/layout_img">
+            <TextView
+                android:id="@+id/step"
+                android:paddingLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/step"/>
+            <TextView
+                android:id="@+id/date"
+                android:paddingRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="第8天"/>
+            <TextView
+                android:id="@+id/nows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/line"
+                android:layout_below="@id/step"
+                android:textSize="10sp"
+                android:text="2016/09/12"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="7.5dp"
+                android:max="10000"
+                android:progress="5000"
+                android:layout_below="@id/nows"
+                android:layout_marginRight="8dp"
+                android:progressDrawable="@drawable/progressbar"
+                android:visibility="visible"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_below="@id/progressBar"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="0"
+                    android:layout_marginLeft="14dp"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_width="wrap_content"
+                    android:text="10000"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="12sp"
+                    android:layout_marginRight="14dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
     </RelativeLayout>
     <GridView
         android:id="@+id/person_gv"
         android:numColumns="2"
         android:paddingTop="40dp"
-        android:visibility="gone"
-        android:paddingLeft="20dp"
-        android:horizontalSpacing="20dp"
-        android:verticalSpacing="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="40dp"
+        android:horizontalSpacing="40dp"
+        android:verticalSpacing="40dp"
+        android:paddingRight="40dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
     </GridView>
