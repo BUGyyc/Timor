@@ -25,5 +25,4 @@ public class Tool {
         activity.startActivity(intent);
         activity.finish();
     }
-
 }

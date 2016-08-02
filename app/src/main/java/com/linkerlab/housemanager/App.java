@@ -9,12 +9,16 @@ import com.linkerlab.housemanager.util.Log;
  * App启动Application
  */
 public class App extends Application {
+
+    public static String token = null;
+    public static String user_id = null;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         Env.setEnv(Env.ENV_DEV);//发布版本后设置不打印日志
-        if(!Env.isRelease()){
+        if (!Env.isRelease()) {
             Log.setLevel(Log.LEVEL_ALL);
         }
     }
