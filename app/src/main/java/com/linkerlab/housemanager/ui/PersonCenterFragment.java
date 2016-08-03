@@ -6,11 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.linkerlab.housemanager.R;
 import com.linkerlab.housemanager.adapter.PersonCenterAdapter;
 import com.linkerlab.housemanager.base.BaseFragment;
+import com.linkerlab.housemanager.thread.Task;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
 
 import net.tsz.afinal.FinalActivity;
 import net.tsz.afinal.annotation.view.ViewInject;
@@ -28,7 +34,9 @@ public class PersonCenterFragment extends BaseFragment{
     TextView mTitleName;
     @ViewInject(id = R.id.person_gv)
     GridView mGridView;
-    private List<Map<String,Object>> mList;
+    @ViewInject(id=R.id.layout_img)
+    LinearLayout mLinearLayout;
+    private List<Map<String,Object>> mList = null;
     private String[] mStrs = {"我的日报","我的表单","我的照片","排查计划\n(未开放)"};
     private int[] mRes= {R.drawable.icon_my_rb,
             R.drawable.icon_my_bd,
@@ -65,6 +73,28 @@ public class PersonCenterFragment extends BaseFragment{
      * 加载数据
      */
     public void loadData(){
+        mLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"hh",Toast.LENGTH_LONG).show();
+                new Task(){
+
+                    @Override
+                    public void onRun() {
+                        for(int i=0;i<100;i++){
+                           String str = "http://ricoo.linkerlab.net/api/api/users/record";
+
+//                            Request request = new Request.Builder()
+//                                    .url(str)
+//                                    .post()
+//                                    .addHeader("Authorization","")
+//                                    .build();
+//                            mOkHttpClient.newCall(request).enqueue(new Callback(){});
+                        }
+                    }
+                }.execute();
+            }
+        });
 
     }
 
