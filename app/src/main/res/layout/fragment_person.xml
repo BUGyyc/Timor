@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#E4E4E5"
     android:layout_height="match_parent">
     <include layout="@layout/top_title"></include>
     <RelativeLayout
@@ -8,7 +9,7 @@
         android:layout_height="150dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:background="#E8E9E8">
+        android:background="#525863">
         <LinearLayout
             android:id="@+id/layout_img"
             android:layout_width="wrap_content"
@@ -25,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingTop="5dp"
+                android:textColor="#FFFFFF"
                 android:text="彭俊熙"/>
         </LinearLayout>
         <RelativeLayout
@@ -36,15 +38,18 @@
             <TextView
                 android:id="@+id/step"
                 android:paddingLeft="15dp"
+                android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/step"/>
             <TextView
                 android:id="@+id/date"
                 android:paddingRight="10dp"
+                android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:visibility="gone"
                 android:text="第8天"/>
             <TextView
                 android:id="@+id/nows"
@@ -79,6 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:text="0"
+                    android:textColor="#FFFFFF"
                     android:layout_marginLeft="14dp"
                     android:textSize="12sp"/>
 
@@ -86,6 +92,7 @@
                     android:id="@+id/end_time"
                     android:layout_width="wrap_content"
                     android:text="10000"
+                    android:textColor="#FFFFFF"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:textSize="12sp"
@@ -98,14 +105,154 @@
     </RelativeLayout>
     <GridView
         android:id="@+id/person_gv"
-        android:numColumns="2"
+        android:numColumns="3"
         android:paddingTop="40dp"
         android:paddingLeft="40dp"
         android:horizontalSpacing="40dp"
+        android:visibility="gone"
         android:verticalSpacing="40dp"
         android:paddingRight="40dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
     </GridView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#7C7C7C"
+        android:paddingLeft="10dp"
+        android:textSize="12dp"
+        android:text="与我相关"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"></View>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            android:layout_height="190dp">
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_my_rb"/>
+            <TextView
+                android:layout_below="@id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="我的日报"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line"></View>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            android:layout_height="190dp">
+            <ImageView
+                android:id="@+id/iv_form"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_my_bd"/>
+            <TextView
+                android:layout_below="@id/iv_form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="我的表单"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line"></View>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="190dp">
+            <ImageView
+                android:id="@+id/iv_zp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_my_zp"/>
+            <TextView
+                android:layout_below="@id/iv_zp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="我的照片"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"></View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="计划"
+        android:textSize="12dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#7C7C7C"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:background="#FFFFFF"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:background="@drawable/background_shape"
+           android:gravity="center"
+           android:layout_height="190dp">
+           <ImageView
+               android:id="@+id/plan"
+               android:layout_centerHorizontal="true"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:src="@drawable/icon_my_pcjh"/>
+           <TextView
+               android:layout_below="@id/plan"
+               android:layout_width="wrap_content"
+               android:layout_centerHorizontal="true"
+               android:layout_height="wrap_content"
+               android:textColor="@color/black"
+               android:text="排查计划\n(未开放)"/>
+       </RelativeLayout>
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="wrap_content">
+       </RelativeLayout>
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="wrap_content">
+       </RelativeLayout>
+
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"></LinearLayout>
+
 
 </LinearLayout>

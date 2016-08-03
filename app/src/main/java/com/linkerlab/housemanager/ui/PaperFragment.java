@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,6 +35,8 @@ public class PaperFragment extends BaseFragment {
     TextView mTitleName;
     @ViewInject(id=R.id.paper_listview)
     ListView mListView;
+    @ViewInject(id=R.id.back)
+    ImageView mBack;
 
     private final String API="http://ricoo.linkerlab.net/";
     private TimeLineAdapter timelineAdapter;
