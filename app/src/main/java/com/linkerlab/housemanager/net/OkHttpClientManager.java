@@ -1,5 +1,7 @@
 package com.linkerlab.housemanager.net;
 
+import com.squareup.okhttp.OkHttpClient;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -558,4 +560,3 @@ public class OkHttpClientManager {
 
 
 }
-

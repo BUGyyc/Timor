@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.linkerlab.housemanager.R;
 import com.linkerlab.housemanager.base.BaseActivity;
+import com.linkerlab.housemanager.net.OkHttpClientManager;
 import com.linkerlab.housemanager.thread.Task;
+import com.linkerlab.housemanager.thread.UiTask;
 import com.linkerlab.housemanager.util.Log;
 import com.linkerlab.housemanager.util.Tool;
 
@@ -53,6 +55,7 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
     private int IPHONE_LOGIN = 1;        //手机号模式登录
     private SharedPreferences preferences;
     private Boolean token = false;
+    private String returnData;
 
     @Override
     protected void initVariables() {
@@ -71,40 +74,7 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void loadData() {
-        preferences = getSharedPreferences("house", MODE_PRIVATE);
-        final String tokenStr = preferences.getString("token", null);
-        new Task() {
-            @Override
-            public void onRun() {
-                try {
-                    String returnData = OkHttpClientManager.getToken("http://ricoo.linkerlab.net/api/users/check_token", tokenStr);
-                    JSONObject jsonObject = new JSONObject(returnData);
-                    if (jsonObject.has("is_valid")) {
-                        if (jsonObject.getInt("is_valid") == 0) {
-                            token = false;
-                            msg = "token过期";
-                        } else if (jsonObject.getInt("is_valid") == 1) {
-                            msg = "token有效";
-                            token = true;
-                            met_user_id.setText(preferences.getString("user_name", null));
-                            met_password.setText(preferences.getString("password", null));
-                        }
-                    } else if (jsonObject.has("message")) {
-                        msg = jsonObject.getString("message");
-                    }
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.execute();
+
     }
 
     @Override
@@ -138,11 +108,7 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
                 getauthcode();
                 break;
             case R.id.login:
-                if (token) {
-                    new Tool().toNextDelete(this, MainActivity.class, null);
-                } else {
                     login();
-                }
                 break;
         }
     }
@@ -187,6 +153,10 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
                 String returnData = null;
                 try {
                     returnData = OkHttpClientManager.postAsString(url, params);
+                    if (returnData == null) {
+                        Toast.makeText(context, "网络出现问题", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     JSONObject jsonObject = new JSONObject(returnData);
                     if (jsonObject.has("token")) {
                         SharedPreferences.Editor editor = getSharedPreferences("house", MODE_PRIVATE).edit();
