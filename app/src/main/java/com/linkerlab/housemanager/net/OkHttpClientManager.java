@@ -5,9 +5,11 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.$Gson$Types;
+import com.linkerlab.housemanager.util.Log;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
@@ -132,7 +134,7 @@ public class OkHttpClientManager {
      * @param url
      */
     private String _getAsynheaderAsString(String url, String param) throws IOException {
-        Response execute = _getAsynheader(url, param);
+        Response execute = _getAsynheader(url,param);
         return execute.body().string();
     }
 
