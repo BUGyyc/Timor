@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 
 /**
@@ -74,7 +75,9 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void loadData() {
-
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
     }
 
     @Override
@@ -108,7 +111,7 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
                 getauthcode();
                 break;
             case R.id.login:
-                    login();
+                login();
                 break;
         }
     }
@@ -122,8 +125,10 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
         if (!TextUtils.isEmpty(user_str) && !TextUtils.isEmpty(password_str)) {
             if (MODEL == 0) {
                 setToast("http://ricoo.linkerlab.net/api/users/login", new OkHttpClientManager.Param[]{new OkHttpClientManager.Param("worker_number", user_str), new OkHttpClientManager.Param("password", password_str)});
+           Log.d("wzc","工号模式登录");
             } else if (MODEL == 1) {
                 setToast("http://ricoo.linkerlab.net/api/users/login", new OkHttpClientManager.Param[]{new OkHttpClientManager.Param("mobile", user_str), new OkHttpClientManager.Param("code", password_str)});
+                Log.d("wzc","手机号模式登录");
             }
         } else {
             Toast.makeText(context, "帐号密码不能为空", Toast.LENGTH_SHORT).show();
@@ -164,7 +169,10 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
                         editor.putString("user_id", jsonObject.get("user_id").toString());
                         editor.putString("user_name", met_user_id.getText().toString());
                         editor.putString("password", met_password.getText().toString());
+                        editor.putLong("time", System.currentTimeMillis());
                         editor.commit();
+                        Log.d("wzc", "上一次登录时间 : " + System.currentTimeMillis());
+                        Log.d("wzc", "token : " + jsonObject.get("token").toString());
                         new Tool().toNextDelete((Activity) context, MainActivity.class, null);
                         msg = "登录成功";
                     } else if (jsonObject.has("error") && "0".equals(jsonObject.getString("error"))) {

@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import net.tsz.afinal.FinalDb;
 
@@ -46,42 +47,50 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initViews(Bundle savedInstanceState) {
         preferences = getSharedPreferences("house", MODE_PRIVATE);
-        final String tokenStr = preferences.getString("token", null);
-        new UiTask() {
-            @Override
-            public void onRun() {
-                try {
-                    returnData = OkHttpClientManager.getToken("http://ricoo.linkerlab.net/api/users/check_token", tokenStr);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onUiRun() throws JSONException {
-                if (returnData != null) {
-                    JSONObject jsonObject = new JSONObject(returnData);
-                    if (jsonObject.has("is_valid")) {
-                        if (jsonObject.getInt("is_valid") == 0) {
-                            token = false;
-                            msg = "token过期";
-                            new Tool().toNextDelete(SplashActivity.this, Login_Activity.class, null);
-                        } else if (jsonObject.getInt("is_valid") == 1) {
-                            msg = "token有效";
-                            token = true;
-                            new Tool().toNextDelete(SplashActivity.this, MainActivity.class, null);
-                        }
-                    } else if (jsonObject.has("message")) {
-                        msg = jsonObject.getString("message");
+        long old_time = preferences.getLong("time", 0);
+        long now_time = System.currentTimeMillis();
+        if (now_time-old_time>=1000*60*60*3) {
+            final String tokenStr = preferences.getString("token", null);
+            new UiTask() {
+                @Override
+                public void onRun() {
+                    try {
+                        returnData = OkHttpClientManager.getToken("http://ricoo.linkerlab.net/api/users/check_token", tokenStr);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    Toast.makeText(SplashActivity.this, msg, Toast.LENGTH_SHORT).show();
-
-                } else {
-                    Toast.makeText(SplashActivity.this, "网络出现问题", Toast.LENGTH_SHORT).show();
-                    return;
                 }
-            }
-        }.execute();
+
+                @Override
+                public void onUiRun() throws JSONException {
+                    if (returnData != null) {
+                        JSONObject jsonObject = new JSONObject(returnData);
+                        if (jsonObject.has("is_valid")) {
+                            if (jsonObject.getInt("is_valid") == 0) {
+                                token = false;
+                                msg = "token过期,请重新登录";
+                                new Tool().toNextDelete(SplashActivity.this, Login_Activity.class, null);
+                            } else if (jsonObject.getInt("is_valid") == 1) {
+                                msg = "token有效";
+                                token = true;
+                                new Tool().toNextDelete(SplashActivity.this, MainActivity.class, null);
+                            }
+                        } else if (jsonObject.has("message")) {
+                            msg = jsonObject.getString("message")+"请重新登录"; //token无效
+                            new Tool().toNextDelete(SplashActivity.this, Login_Activity.class, null);
+                        }
+                        Toast.makeText(SplashActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(SplashActivity.this, "网络出现问题", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+            }.execute();
+        } else {
+            new Tool().toNextDelete(SplashActivity.this, MainActivity.class, null);
+        }
+
     }
 
 
@@ -89,9 +98,4 @@ public class SplashActivity extends BaseActivity {
     protected void loadData() {
 
     }
-    //Test
-   /* public void myclick(View v){
-        Toast.makeText(this,"rao",Toast.LENGTH_LONG).show();
-    }*/
-
 }
