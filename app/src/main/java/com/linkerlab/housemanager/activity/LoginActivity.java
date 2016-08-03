@@ -33,7 +33,7 @@ import java.util.Calendar;
  * wzc
  */
 
-public class Login_Activity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     @ViewInject(id = R.id.job_login)
     Button mbt_job;                      //工号登录
@@ -188,6 +188,12 @@ public class Login_Activity extends BaseActivity implements View.OnClickListener
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(context, "网络连接失败！", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     Log.e("wzc", "setToast()");
                 }
             }
