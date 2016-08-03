@@ -83,6 +83,7 @@
                 android:background="@drawable/semi_round_edittext"
                 android:gravity="center"
                 android:hint="@string/input_id"
+                android:text="1"
                 android:singleLine="true" />
 
             <Button
@@ -102,6 +103,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/semi_round_edittext"
                 android:gravity="center"
+
                 android:hint="@string/input_password"
                 android:inputType="textPassword"
                 android:singleLine="true" />

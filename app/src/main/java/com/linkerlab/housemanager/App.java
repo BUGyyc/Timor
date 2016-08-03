@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //SDKInitializer.initialize(getApplicationContext());
+        SDKInitializer.initialize(getApplicationContext());
         Env.setEnv(Env.ENV_DEV);//发布版本后设置不打印日志
         if (!Env.isRelease()) {
             Log.setLevel(Log.LEVEL_ALL);
