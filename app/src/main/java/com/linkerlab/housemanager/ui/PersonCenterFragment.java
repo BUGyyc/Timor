@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class PersonCenterFragment extends BaseFragment{
     GridView mGridView;
     @ViewInject(id=R.id.layout_img)
     LinearLayout mLinearLayout;
+    @ViewInject(id =R.id.back)
+    ImageView mBack;
     private List<Map<String,Object>> mList = null;
     private String[] mStrs = {"我的日报","我的表单","我的照片","排查计划\n(未开放)"};
     private int[] mRes= {R.drawable.icon_my_rb,
@@ -49,6 +52,7 @@ public class PersonCenterFragment extends BaseFragment{
         FinalActivity.initInjectedView(this,ViewRoot);
         //mTitleName = (TextView) ViewRoot.findViewById(R.id.title_name);
         mTitleName.setText(R.string.person);
+        mBack.setVisibility(View.VISIBLE);
         initViews();
         loadData();
         return ViewRoot;
