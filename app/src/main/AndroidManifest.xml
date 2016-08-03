@@ -27,7 +27,10 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="QLRwGSAxdM5a2csn4VGmodHhAd5YGle1" />
         <activity android:name=".activity.SplashActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.Login_Activity"
